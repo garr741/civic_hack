@@ -49,10 +49,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/card_name"
                         android:textSize="14sp"
-                        android:text="This is my description. Is it long enough to take up a lot of space?"
+                        android:text="This is my description."
                         />
-
-
 
 
             </RelativeLayout>

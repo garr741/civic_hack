@@ -105,7 +105,7 @@
             android:gravity="center"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
-            android:text="Buddy Up!"
+            android:text="Find a Buddy"
             android:textColor="@color/black"
             android:background="@color/colorPrimaryDark"
             />

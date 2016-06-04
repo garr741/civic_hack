@@ -11,6 +11,15 @@
             android:id="@+id/ride_toolbar"
             layout="@layout/toolbar"/>
 
+    <ImageView
+            android:id="@+id/ride_map_imageview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mapmap"
+            android:layout_below="@id/ride_toolbar"
+            android:adjustViewBounds="true"
+            />
+
 
     <Button
             android:id="@+id/join_ride_button"
@@ -20,7 +29,7 @@
             android:textAllCaps="true"
             android:background="@color/colorAccent"
             android:textColor="@color/white"
-            android:layout_below="@id/ride_toolbar"
+            android:layout_below="@id/ride_map_imageview"
             android:layout_margin="16dp"
             />
 
