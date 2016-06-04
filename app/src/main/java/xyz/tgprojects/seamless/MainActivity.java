@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override public void onClick(View v) {
         if ( v.getId() == R.id.login_button ){
-            Intent i = new Intent();
+            Intent i = new Intent(this, ProfileActivity.class);
             startActivity(i);
         }
     }
