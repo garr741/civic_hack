@@ -25,7 +25,8 @@
             android:layout_margin="15dp"
             android:src="@drawable/plus"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"/>
+            android:layout_alignParentEnd="true"
+            android:tint="@color/white"/>
 
 
 </RelativeLayout>

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import xyz.tgprojects.seamless.R;
 import xyz.tgprojects.seamless.RideActivity;
@@ -27,7 +28,7 @@ public class RidersAdapter extends RecyclerView.Adapter<RidersAdapter.ViewHolder
     }
 
     @Override public void onBindViewHolder(RidersAdapter.ViewHolder holder, int position) {
-        holder.card.setOnClickListener(new View.OnClickListener() {
+        holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 context.startActivity(new Intent(context, RideActivity.class));
             }
@@ -40,7 +41,7 @@ public class RidersAdapter extends RecyclerView.Adapter<RidersAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        CardView card;
+        LinearLayout layout;
         ImageView imageView;
         TextView name;
         TextView description;
@@ -48,7 +49,7 @@ public class RidersAdapter extends RecyclerView.Adapter<RidersAdapter.ViewHolder
 
         public ViewHolder(View itemView) {
             super(itemView);
-            card = (CardView) itemView.findViewById(R.id.ride_card);
+            layout = (LinearLayout) itemView.findViewById(R.id.rider_card_layout);
             imageView = (ImageView) itemView.findViewById(R.id.card_imageview);
             name = (TextView) itemView.findViewById(R.id.card_name);
             description = (TextView) itemView.findViewById(R.id.card_description);

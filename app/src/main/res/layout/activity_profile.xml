@@ -29,7 +29,7 @@
             android:layout_marginTop="10dp"
             android:text="Tylor Garrett"
             android:textSize="36sp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:layout_centerHorizontal="true"
             />
 
@@ -39,7 +39,7 @@
             android:textSize="16sp"
             android:layout_height="wrap_content"
             android:layout_below="@id/profile_name_textview"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:layout_marginTop="10dp"
             android:text="Graduate of Purdue University. IndyX Tech Fellow. Angie's List Software Developer. Bike Enthusiast. Speed Demon"
             android:gravity="center"/>
@@ -68,7 +68,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:text="24\nRides"
                 android:gravity="center"/>
 
@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:layout_toEndOf="@id/profile_rides_textview"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:text="4.4\n Rating"
                 android:gravity="center"
                 />
@@ -106,7 +106,7 @@
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
             android:text="Buddy Up!"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:background="@color/colorPrimaryDark"
             />
 </RelativeLayout>

@@ -8,9 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import xyz.tgprojects.seamless.R;
 
-/**
- * Created by tylor.garrett on 6/4/16.
- */
 public class RideAdapter extends RecyclerView.Adapter<RideAdapter.ViewHolder> {
     @Override public RideAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.profile_card, parent, false);
