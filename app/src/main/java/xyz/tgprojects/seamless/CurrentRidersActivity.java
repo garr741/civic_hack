@@ -38,9 +38,8 @@ public class CurrentRidersActivity extends AppCompatActivity {
         fab = (FloatingActionButton) findViewById(R.id.fab);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Rides Near You");
         setSupportActionBar(toolbar);
-        toolbar.setTitle("Current Rides");
-
         fab.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 showCreateDialog();
