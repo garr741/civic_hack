@@ -32,7 +32,9 @@ public class CurrentRidersActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.riders_recyclerview);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new RidersAdapter(this);
+        String[] names = {"Kyle Potts", "Ben Wencke", "Mike Hockerman", "Tylor Garrett", "Donald Trump"};
+        String[] dist = {"0.8 miles", "2 miles", "0.1 miles", "1.3 miles", "1.1 miles"};
+        adapter = new RidersAdapter(this.getApplicationContext(),names, dist);
         recyclerView.setAdapter(adapter);
 
         fab = (FloatingActionButton) findViewById(R.id.fab);

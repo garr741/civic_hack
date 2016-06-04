@@ -1,58 +1,72 @@
 package xyz.tgprojects.seamless.adapters;
 
 import android.content.Context;
-import android.content.Intent;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
 import xyz.tgprojects.seamless.R;
-import xyz.tgprojects.seamless.RideActivity;
 
 public class RidersAdapter extends RecyclerView.Adapter<RidersAdapter.ViewHolder> {
+    private String[] mDataset;
+    private String[] dist;
 
-    Context context;
+    // Provide a reference to the views for each data item
+    // Complex data items may need more than one view per item, and
+    // you provide access to all the views for a data item in a view holder
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        // each data item is just a string in this case
+        public TextView mTextView;
+        public TextView distanceView;
+        public ViewHolder(View v) {
+            super(v);
 
-    public RidersAdapter(Context context){
-        this.context = context;
-    }
-
-
-    @Override public RidersAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.rider_card, parent, false);
-        return new ViewHolder(v);
-    }
-
-    @Override public void onBindViewHolder(RidersAdapter.ViewHolder holder, int position) {
-        holder.layout.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View v) {
-                context.startActivity(new Intent(context, RideActivity.class));
-            }
-        });
-    }
-
-    @Override public int getItemCount() {
-        return 5;
-    }
-
-    public class ViewHolder extends RecyclerView.ViewHolder{
-
-        LinearLayout layout;
-        ImageView imageView;
-        TextView name;
-        TextView description;
-
-
-        public ViewHolder(View itemView) {
-            super(itemView);
-            layout = (LinearLayout) itemView.findViewById(R.id.rider_card_layout);
-            imageView = (ImageView) itemView.findViewById(R.id.card_imageview);
-            name = (TextView) itemView.findViewById(R.id.card_name);
-            description = (TextView) itemView.findViewById(R.id.card_description);
+            mTextView = (TextView) v.findViewById(R.id.card_name);
+            distanceView = (TextView) v.findViewById(R.id.card_description);
         }
     }
+
+    // Provide a suitable constructor (depends on the kind of dataset)
+    public RidersAdapter(Context c, String[]myDataset, String[] dist) {
+        Log.d("ddd",dist.toString());
+        mDataset = myDataset;
+        this.dist = dist;
+    }
+
+    // Create new views (invoked by the layout manager)
+    @Override
+    public RidersAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+                                                   int viewType) {
+        // create a new view
+        View v = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.rider_card, parent, false);
+        // set the view's size, margins, paddings and layout parameters
+
+        ViewHolder vh = new ViewHolder(v);
+        return vh;
+    }
+
+    // Replace the contents of a view (invoked by the layout manager)
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        // - get element from your dataset at this position
+        // - replace the contents of the view with that element
+        holder.mTextView.setText(mDataset[position]);
+        holder.distanceView.setText(dist[position]);
+
+    }
+
+    // Return the size of your dataset (invoked by the layout manager)
+    @Override
+    public int getItemCount() {
+        return mDataset.length;
+    }
 }
+
+
