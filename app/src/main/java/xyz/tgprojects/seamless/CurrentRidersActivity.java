@@ -1,6 +1,7 @@
 package xyz.tgprojects.seamless;
 
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -42,7 +43,7 @@ public class CurrentRidersActivity extends AppCompatActivity {
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
-
+                showCreateDialog();
             }
         });
     }
@@ -59,5 +60,13 @@ public class CurrentRidersActivity extends AppCompatActivity {
             startActivity(new Intent(this, ProfileActivity.class));
         }
         return super.onOptionsItemSelected(item);
+    }
+
+
+    public void showCreateDialog(){
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.create_ride_dialog);
+        dialog.setTitle("Create A Ride");
+        dialog.show();
     }
 }
