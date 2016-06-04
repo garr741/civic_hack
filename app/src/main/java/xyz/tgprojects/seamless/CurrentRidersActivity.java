@@ -2,7 +2,9 @@ package xyz.tgprojects.seamless;
 
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +14,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import xyz.tgprojects.seamless.adapters.RidersAdapter;
 
 public class CurrentRidersActivity extends AppCompatActivity {
@@ -32,8 +38,19 @@ public class CurrentRidersActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.riders_recyclerview);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        String[] names = {"Kyle Potts", "Ben Wencke", "Mike Hockerman", "Tylor Garrett", "Donald Trump"};
-        String[] dist = {"0.8 miles", "2 miles", "0.1 miles", "1.3 miles", "1.1 miles"};
+         List<String> names = new ArrayList<String>() {{
+            add("Kyle Potts");
+            add("Ben Wencke");
+            add("Mike Hockerman");
+            add("Tylor Garrett");
+        }};
+
+        List<String> dist = new ArrayList<String>() {{
+            add("0.9 miles");
+            add("0.5 miles");
+            add("1.2 miles");
+            add("0.6 miles");
+        }};
         adapter = new RidersAdapter(this.getApplicationContext(),names, dist);
         recyclerView.setAdapter(adapter);
 
@@ -42,9 +59,16 @@ public class CurrentRidersActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Rides Near You");
         setSupportActionBar(toolbar);
+        final Context c = this;
         fab.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
-                showCreateDialog();
+                //showCreateDialog()
+                SharedPreferences sharedPref = c.getSharedPreferences(
+                        "prefs", Context.MODE_PRIVATE);
+                String name = sharedPref.getString("name","");
+                adapter.addRiders(name,"0.1 miles");
+                adapter.notifyDataSetChanged();
+
             }
         });
     }
