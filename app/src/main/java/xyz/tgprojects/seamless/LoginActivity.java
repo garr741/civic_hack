@@ -30,7 +30,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override public void onClick(View v) {
         if ( v.getId() == R.id.login_button ){
             EditText editText =(EditText) findViewById(R.id.login_email);
-            Context context = this;
 
 
             editor.putString("name", editText.getText().toString());

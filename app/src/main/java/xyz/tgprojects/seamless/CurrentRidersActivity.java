@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,7 +52,8 @@ public class CurrentRidersActivity extends AppCompatActivity {
             add("1.2 miles");
             add("0.6 miles");
         }};
-        adapter = new RidersAdapter(this.getApplicationContext(),names, dist);
+        Picasso picasso = Picasso.with(this);
+        adapter = new RidersAdapter(this.getApplicationContext(),names, dist, picasso);
         recyclerView.setAdapter(adapter);
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -68,7 +70,6 @@ public class CurrentRidersActivity extends AppCompatActivity {
                 String name = sharedPref.getString("name","");
                 adapter.addRiders(name,"0.1 miles");
                 adapter.notifyDataSetChanged();
-
             }
         });
     }

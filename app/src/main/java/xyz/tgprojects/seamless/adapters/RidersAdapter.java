@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
 import org.w3c.dom.Text;
 
 import java.lang.reflect.Array;
@@ -26,6 +27,7 @@ public class RidersAdapter extends RecyclerView.Adapter<RidersAdapter.ViewHolder
     private List<String> mDataset;
     private List<String> dist;
     private Context c;
+    private Picasso picasso;
 
     public void addRiders(String name, String dist){
         mDataset.add(name);
@@ -53,11 +55,12 @@ public class RidersAdapter extends RecyclerView.Adapter<RidersAdapter.ViewHolder
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public RidersAdapter(Context c, List<String>myDataset, List<String> dist) {
+    public RidersAdapter(Context c, List<String>myDataset, List<String> dist, Picasso picasso) {
         Log.d("ddd",dist.toString());
         mDataset = myDataset;
         this.dist = dist;
         this.c = c;
+        this.picasso = picasso;
     }
 
     // Create new views (invoked by the layout manager)
@@ -84,26 +87,33 @@ public class RidersAdapter extends RecyclerView.Adapter<RidersAdapter.ViewHolder
 
         switch(position) {
             case 0:
-                holder.circleImageView.setImageDrawable(c.getResources().getDrawable(R.drawable.person1));
+                //holder.circleImageView.setImageDrawable(c.getResources().getDrawable(R.drawable.person1));
+                picasso.load(R.drawable.person1).into(holder.circleImageView);
                 break;
             case 1:
-                holder.circleImageView.setImageDrawable(c.getResources().getDrawable(R.drawable.person2));
+                //holder.circleImageView.setImageDrawable(c.getResources().getDrawable(R.drawable.person2));
+                picasso.load(R.drawable.person2).into(holder.circleImageView);
                 break;
             case 2:
-                holder.circleImageView.setImageDrawable(c.getResources().getDrawable(R.drawable.person3));
+                //holder.circleImageView.setImageDrawable(c.getResources().getDrawable(R.drawable.person3));
+                picasso.load(R.drawable.person3).into(holder.circleImageView);
                 break;
             case 3:
-                holder.circleImageView.setImageDrawable(c.getResources().getDrawable(R.drawable.person4));
+                //holder.circleImageView.setImageDrawable(c.getResources().getDrawable(R.drawable.person4));
+                picasso.load(R.drawable.person4).into(holder.circleImageView);
                 break;
             case 4:
-                holder.circleImageView.setImageDrawable(c.getResources().getDrawable(R.drawable.person2));
+                //holder.circleImageView.setImageDrawable(c.getResources().getDrawable(R.drawable.person2));
+                picasso.load(R.drawable.person3).into(holder.circleImageView);
                 break;
             case 5:
-                holder.circleImageView.setImageDrawable(c.getResources().getDrawable(R.drawable.person1));
+                //holder.circleImageView.setImageDrawable(c.getResources().getDrawable(R.drawable.person1));
+                picasso.load(R.drawable.person1).into(holder.circleImageView);
                 break;
 
             default:
-                holder.circleImageView.setImageDrawable(c.getResources().getDrawable(R.drawable.person4));
+                //holder.circleImageView.setImageDrawable(c.getResources().getDrawable(R.drawable.person4));
+                picasso.load(R.drawable.person4).into(holder.circleImageView);
                 break;
         }
 
