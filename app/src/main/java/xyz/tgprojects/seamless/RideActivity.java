@@ -3,6 +3,7 @@ package xyz.tgprojects.seamless;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -21,9 +22,10 @@ public class RideActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ride);
 
         recyclerView = (RecyclerView) findViewById(R.id.ride_recyclerview);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         toolbar = (Toolbar) findViewById(R.id.ride_toolbar);
+        toolbar.setTitle("Ride Details");
         setSupportActionBar(toolbar);
 
         RideAdapter rideAdapter = new RideAdapter();
