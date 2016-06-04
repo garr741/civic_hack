@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:id="@+id/bottomBarBikers"
+            android:icon="@drawable/bikers"
+            android:title="Bikers" />
+    <item
+            android:id="@+id/bottomBarCreate"
+            android:icon="@drawable/plus"
+            android:title="Create A Ride"/>
+    <item
+            android:id="@+id/bottomBarProfile"
+            android:icon="@drawable/user"
+            android:title="Profile"/>
+</menu>

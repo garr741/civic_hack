@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override public void onClick(View v) {
         if ( v.getId() == R.id.login_button ){
-            Intent i = new Intent(this, ProfileActivity.class);
+            Intent i = new Intent(this, CurrentRidersActivity.class);
             startActivity(i);
         }
     }
