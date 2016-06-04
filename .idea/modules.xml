@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Seamless.iml" filepath="$PROJECT_DIR$/Seamless.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/civic_hack.iml" filepath="$PROJECT_DIR$/civic_hack.iml" />
     </modules>
   </component>
 </project>

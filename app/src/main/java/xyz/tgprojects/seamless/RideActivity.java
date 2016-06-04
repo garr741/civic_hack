@@ -10,6 +10,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import xyz.tgprojects.seamless.adapters.RideAdapter;
 
 public class RideActivity extends AppCompatActivity {
@@ -31,7 +37,21 @@ public class RideActivity extends AppCompatActivity {
         toolbar.setTitle("Ride Details");
         setSupportActionBar(toolbar);
 
-        RideAdapter rideAdapter = new RideAdapter();
+        List<String> names = new ArrayList<String>() {{
+            add("Kyle Potts");
+            add("Ben Wencke");
+            add("Mike Hockerman");
+            add("Tylor Garrett");
+        }};
+
+        List<String> descr = new ArrayList<String>() {{
+            add("Biking is my life");
+            add("New Biker, ready to rock");
+            add("I bike because I am old");
+            add("I own 23 bikes");
+        }};
+        Picasso picasso = Picasso.with(this);
+        RideAdapter rideAdapter = new RideAdapter(this, names, descr, picasso);
 
 
         recyclerView.setAdapter(rideAdapter);
