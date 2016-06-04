@@ -3,6 +3,7 @@
         package="xyz.tgprojects.seamless"
         >
 
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -19,6 +20,8 @@
         <activity android:name=".ProfileActivity">
         </activity>
         <activity android:name=".CurrentRidersActivity">
+        </activity>
+        <activity android:name=".RideActivity">
         </activity>
     </application>
 </manifest>

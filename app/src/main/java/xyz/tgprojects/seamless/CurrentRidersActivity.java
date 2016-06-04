@@ -32,7 +32,7 @@ public class CurrentRidersActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.riders_recyclerview);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new RidersAdapter();
+        adapter = new RidersAdapter(this);
         recyclerView.setAdapter(adapter);
 
         fab = (FloatingActionButton) findViewById(R.id.fab);

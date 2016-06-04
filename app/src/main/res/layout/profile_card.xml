@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="2dp">
-
-
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
     <android.support.v7.widget.CardView
-            android:id="@+id/ride_card"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             >
 
@@ -17,38 +13,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 >
-
             <ImageView
-                    android:id="@+id/card_imageview"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/profile_card_imageview"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:src="@drawable/person"
-                    android:layout_alignParentStart="true"
                     />
-
-
+            
             <TextView
-                    android:id="@+id/card_name"
+                    android:id="@+id/profile_card_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_toEndOf="@id/card_imageview"
-                    android:textSize="22sp"
+                    android:layout_below="@id/profile_card_imageview"
                     android:text="Tylor Garrett"
+                    android:gravity="center"
                     />
 
             <TextView
-                    android:id="@+id/card_description"
+                    android:id="@+id/profile_card_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_below="@id/card_name"
-                    android:layout_toEndOf="@id/card_imageview"
-                    android:text="This is my description. Is it long enough to take up a lot of space?"
+                    android:layout_below="@id/profile_card_name"
+                    android:text="Here's my description. I might need a little help writing it!"
+                    android:gravity="center"
                     />
 
 
         </RelativeLayout>
 
+
     </android.support.v7.widget.CardView>
+
 </LinearLayout>
